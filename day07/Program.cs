@@ -17,15 +17,33 @@ namespace day07
             {
                 Console.WriteLine("高");
             }
-            if(style == PersonStyle.rich)
+            if((style & PersonStyle.rich) == PersonStyle.rich)
             {
                 Console.WriteLine("富");
+            }
+            if((style&PersonStyle.handsome) == PersonStyle.handsome)
+            {
+                Console.WriteLine("帅");
+            }
+            if((style&PersonStyle.beautiful )!=0)
+            {
+                Console.WriteLine("美");
+            }
+            if((style&PersonStyle.white)!=0)
+            {
+                Console.WriteLine("白");
             }
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine();
+            PrintPersonStyle(PersonStyle.tall|PersonStyle.rich);
+            //int==>Enum
+            //数据类型转换：显式转换
+            PrintPersonStyle((PersonStyle)2);
+            //string==>Enum
+            PersonStyle sty2=(PersonStyle) Enum.Parse(typeof(PersonStyle), "beautiful");
+            PrintPersonStyle(sty2);
+            //Enum==>string Tostring
         }
     }
 }
