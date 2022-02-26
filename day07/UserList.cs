@@ -11,6 +11,7 @@ namespace day07
         //字段
         private User[] data;
         //属性
+
         //构造函数
         public UserList() : this(8) { }
         public UserList(int capacity)

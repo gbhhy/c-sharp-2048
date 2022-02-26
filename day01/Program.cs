@@ -7,11 +7,11 @@ namespace day01//定义命名空间:类的住址[对类进行逻辑上的划分,
         static void Main(string[] args)//定义方法[做功能]
         {
 
-                //ctrl+k+f 自动对齐
-                //ctrl+k+c 注释选中代码
-                //ctrl+k+u 取消注释
-                //ctrl+z 撤回
-                Console.Title = "first program";
+            //ctrl + k + f 自动对齐
+            //ctrl + k + c 注释选中代码
+            //ctrl + k + u 取消注释
+            //ctrl + z 撤回
+            Console.Title = "first program";
                 Console.WriteLine("请输入枪的名称：");
                 string gunName = Console.ReadLine();
                 Console.WriteLine("请输入弹匣容量：");
