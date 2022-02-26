@@ -34,7 +34,7 @@ namespace day07
                 Console.WriteLine("白");
             }
         }
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             PrintPersonStyle(PersonStyle.tall|PersonStyle.rich);
             //int==>Enum
@@ -44,6 +44,48 @@ namespace day07
             PersonStyle sty2=(PersonStyle) Enum.Parse(typeof(PersonStyle), "beautiful");
             PrintPersonStyle(sty2);
             //Enum==>string Tostring
+        }
+        static void Main2()//类和对象
+        {
+            Wife wife01=new Wife();
+            wife01.SetName("悦悦");
+            wife01.SetAge(20);
+            wife01.Name = "悦";
+            Console.WriteLine(wife01.Name);
+        }
+        static void Main3()
+        {
+            Wife[] wifeArray=new Wife[5];
+            wifeArray[0]=new Wife("01",12);
+            wifeArray[1] = new Wife("02", 28);
+            wifeArray[2] = new Wife("03", 23);
+            wifeArray[3] = new Wife("04", 17);
+            wifeArray[4] = new Wife("05", 21);
+            int age = FindYoungWife(wifeArray).Age;
+            Console.WriteLine(age);
+        }
+        static void Main()
+        {
+            UserList school=new UserList(5);
+            school.Add(new User("ggg", "ddd"));
+            school.Insert(new User("sss", "sss"), 0);
+            school.Insert(new User("sss", "sss"), 0);
+            school.Insert(new User("sss", "sss"), 0);
+            school.Insert(new User("jss", "sss"), 0);
+            school.Delete(2);
+            school.PrintList();
+        }
+        private static Wife FindYoungWife(Wife[] array)
+        {
+            Wife youngestWife=new Wife("",100);
+            for (int i = 0; i < array.Length; i++)
+            {
+                if(array[i].Age<youngestWife.Age)
+                {
+                    youngestWife=array[i];
+                }
+            }
+            return youngestWife;
         }
     }
 }
