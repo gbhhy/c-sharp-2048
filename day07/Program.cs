@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace day07
 {
@@ -64,7 +65,7 @@ namespace day07
             int age = FindYoungWife(wifeArray).Age;
             Console.WriteLine(age);
         }
-        static void Main()
+        static void Main4()
         {
             UserList school=new UserList(5);
             school.Add(new User("ggg", "ddd"));
@@ -74,6 +75,23 @@ namespace day07
             school.Insert(new User("jss", "sss"), 0);
             school.Delete(2);
             school.PrintList();
+        }
+        static void Main()
+        {
+            //c#泛型集合 List<数据类型>
+            //User[]              new User[]
+            List<User>list=new List<User>();
+            list.Add(new User());
+            //Remove
+            //RemoveAt
+            //Insert
+            //Count
+
+            //字典集合  根据？查找？
+            //键值对集合
+            Dictionary<string, User> map=new Dictionary<string, User>();
+            map.Add("hhy", new User());
+            User hhy = map["hhy"];
         }
         private static Wife FindYoungWife(Wife[] array)
         {
